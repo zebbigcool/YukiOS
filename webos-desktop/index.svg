@@ -1,287 +1,173 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1920 1080">
-  <foreignObject width="100%" height="100%">
-    <xhtml:div xmlns:xhtml="http://www.w3.org/1999/xhtml" style="width: 100%; height: 100%;">
-      
-      <!doctype html>
-<html lang="en" style="background: #1e1e1e">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
-    <link rel="preconnect" href="https://static.cloudflareinsights.com" />
+<svg width="400" height="250" xmlns="http://www.w3.org/2000/svg" style="border: 1px solid #ccc;">
+  <rect width="100%" height="100%" fill="#1e1e1e"/>
 
-    <link
-      rel="preload"
-      as="style"
-      href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Barlow:wght@300;400;500;600&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Barlow:wght@300;400;500;600&display=swap"
-      media="print"
-      onload="this.media = 'all'"
-    />
-    <script
-      type="module"
-      src="https://static.cloudflareinsights.com/beacon.min.js"
-      data-cf-beacon='{"token": "2fef78db02bd4ab593e4a78cc531c0bd"}'
-    ></script>
-    <!-- End Cloudflare Web Analytics -->
-    <base href="./" />
+  <foreignObject x="0" y="0" width="400" height="250">
+    <div xmlns="http://www.w3.org/1999/xhtml" class="yukios-container">
+      <style>
+        .yukios-container {
+          width: 400px;
+          height: 250px;
+          box-sizing: border-box;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          background: #1e1e1e;
+          color: #ffffff;
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+          font-size: 11px;
+          overflow: hidden;
+          user-select: none;
+        }
 
-    <title>YukiOS</title>
-    <meta
-      name="description"
-      content="YukiOS is a free browser-based desktop environment with a tiling window manager, macOS-style interface, 3000 games, a terminal with Python &amp; Git, emulators for DOS/Flash/x86/3DS, and 90+ apps - no sign-up or download required. Open source with MIT license."
-    />
+        .desktop {
+          flex: 1;
+          position: relative;
+          background: radial-gradient(circle at center, #2a2d32 0%, #111215 100%);
+        }
 
-    <meta property="og:title" content="YukiOS - Free Desktop Environment in Your Browser, No Download Needed" />
+        .start-menu {
+          position: absolute;
+          bottom: 10px;
+          left: 10px;
+          width: 220px;
+          height: 150px;
+          background: rgba(30, 30, 30, 0.95);
+          border: 1px solid #333333;
+          border-radius: 6px;
+          display: flex;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+        }
 
-    <meta
-      property="og:description"
-      content="Turn your browser into a full desktop OS with YukiOS. Tiling window manager, Mac desktop mode, 3000 free games, Python/Node terminal, DOS/Flash/x86 emulators, 90+ apps - all in one browser tab."
-    />
+        .start-sidebar {
+          width: 75px;
+          border-right: 1px solid #333333;
+          padding: 6px 4px;
+          display: flex;
+          flex-direction: column;
+          gap: 2px;
+          background: rgba(0, 0, 0, 0.2);
+        }
 
-    <meta name="twitter:title" content="YukiOS - Free Desktop Environment in Your Browser, No Install Needed" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://cdn.jsdelivr.net/gh/Reeyuki/YukiOS@main/.github/yuki-deck.png" />
-    <meta property="og:image:width" content="1920" />
-    <meta property="og:image:height" content="1080" />
-    <meta
-      property="og:image:alt"
-      content="YukiOS browser-based desktop environment showing windowed multitasking with apps, taskbar, and start menu"
-    />
-    <meta property="og:site_name" content="YukiOS" />
-    <meta property="og:url" content="https://yukios.netlify.app" />
-    <meta property="og:locale" content="en_US" />
+        .start-cat {
+          padding: 3px 5px;
+          border-radius: 3px;
+          font-size: 9px;
+          color: #aaaaaa;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:description"
-      content="Browser desktop OS with tiling WM, Mac mode, 3000 games, Python/Node terminal, emulators for DOS/Flash/x86/3DS, themes, wallpapers, PWA support, and 90+ apps - completely free and no download."
-    />
-    <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/Reeyuki/YukiOS@main/.github/yuki-deck.png" />
-    <meta
-      name="twitter:image:alt"
-      content="YukiOS browser-based desktop environment showing windowed multitasking with apps, taskbar, and start menu"
-    />
+        .start-cat.active {
+          background: #3a3f4d;
+          color: #ffffff;
+        }
 
-    <meta name="application-name" content="YukiOS" />
-    <meta name="theme-color" content="#1e1e1e" />
-    <meta name="google-site-verification" content="6D2EMAqnKo-MEhFnlXuyqliO-87DFoI3hfAsWer0KKg" />
-    <link rel="canonical" href="https://yukios.netlify.app/" />
-    <link rel="icon" href="favicon.ico" />
-    <link rel="preload" as="image" href="src/assets/logo.png" />
-    <script>
-      (function () {
-        try {
-          var href = new URL("manifest.webmanifest", window.location.href).toString();
-          var link = document.createElement("link");
-          link.rel = "manifest";
-          link.href = href;
-          document.head.appendChild(link);
-        } catch (e) {}
-      })();
-    </script>
+        .start-content {
+          flex: 1;
+          padding: 6px;
+          display: flex;
+          flex-direction: column;
+          gap: 6px;
+        }
 
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "YukiOS",
-        "applicationCategory": "WebApplication",
-        "applicationSubCategory": "DesktopEnvironment",
-        "operatingSystem": "Web Browser (Chrome, Firefox, Edge, Safari)",
-        "url": "https://yukios.netlify.app",
-        "description": "YukiOS is a browser-based desktop operating system with windowed multitasking, a virtual filesystem, 90+ built-in applications, and persistent storage.",
-        "featureList": [
-          "Windowed desktop environment",
-          "Virtual filesystem with persistent storage",
-          "90+ built-in applications",
-          "Browser-based code editor",
-          "Integrated terminal with Python and Node.js REPLs",
-          "Desktop notifications",
-          "Command palette",
-          "PWA support with offline caching",
-          "Custom wallpapers and themes",
-          "User profiles and session management",
-          "Emulators: Flash, DOS, x86, 3DS",
-          "Window tiling manager"
-        ],
-        "screenshot": "https://cdn.jsdelivr.net/gh/Reeyuki/YukiOS@main/.github/yuki-deck.png",
-        "image": "https://cdn.jsdelivr.net/gh/Reeyuki/YukiOS@main/.github/steam.png",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "applicationSuite": "YukiOS",
-        "genre": ["Desktop Environment", "Web Application", "Productivity"],
-        "publisher": {
-          "@type": "Organization",
-          "name": "YukiOS",
-          "url": "https://github.com/Reeyuki/YukiOS"
-        }
-      }
-    </script>
-    <link href="src/styles/achievements.css" rel="stylesheet" />
-    <link href="src/styles/converter.css" rel="stylesheet" />
-    <link href="src/styles/desktop.css" rel="stylesheet" />
-    <link href="src/styles/gamesAndApps.css" rel="stylesheet" />
-    <link href="src/styles/notification.css" rel="stylesheet" />
-    <link href="src/styles/session.css" rel="stylesheet" />
-    <link href="src/styles/settings.css" rel="stylesheet" />
-    <link href="src/styles/startMenu.css" rel="stylesheet" />
-    <link href="src/styles/steam.css" rel="stylesheet" />
-    <link href="src/styles/style.css" rel="stylesheet" />
-    <link href="src/styles/systemUI.css" rel="stylesheet" />
-    <link href="src/styles/taskbar.css" rel="stylesheet" />
-    <link href="src/styles/widgets.css" rel="stylesheet" />
-    <link href="src/styles/themes.css" rel="stylesheet" />
-    <link href="src/styles/cursorEffect.css" rel="stylesheet" />
-    <link href="src/styles/mobile.css" rel="stylesheet" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-    <script type="module" src="src/main.js"></script>
-  </head>
+        .search-input-wrapper {
+          width: 100%;
+          box-sizing: border-box;
+        }
 
-  <body>
-    <h1
-      style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap"
-    >
-      YukiOS - Free Browser-Based Desktop Environment
-    </h1>
-    <div id="selection-box"></div>
+        .search-input-wrapper input {
+          width: 100%;
+          background: #111111;
+          border: 1px solid #444444;
+          border-radius: 3px;
+          color: #ffffff;
+          font-size: 9px;
+          padding: 3px 5px;
+          box-sizing: border-box;
+        }
 
-    <div id="desktop" class="desktop" role="presentation">
-      <div id="start-menu" class="start-menu">
-        <div class="start-sidebar">
-          <div class="start-user">
-            <img src="static/icons/guest.webp" alt="User avatar" />
-            <span></span>
-          </div>
+        .app-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 6px;
+        }
 
-          <div class="start-cat-list">
-            <div class="start-cat" data-cat="favorites"><i class="fas fa-star"></i> Favorites</div>
+        .app-item {
+          width: 28px;
+          height: 28px;
+          border-radius: 4px;
+          margin: 0 auto;
+        }
 
-            <div class="start-cat" data-cat="recent"><i class="fas fa-clock"></i> Recent</div>
+        #taskbar {
+          height: 26px;
+          background: rgba(20, 20, 20, 0.95);
+          border-top: 1px solid #333333;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0 8px;
+        }
 
-            <div class="start-cat active" data-cat="all"><i class="fas fa-th"></i> All Applications</div>
+        .mac-menu-bar {
+          display: flex;
+          gap: 8px;
+          color: #cccccc;
+          font-size: 10px;
+        }
 
-            <div class="start-cat" data-cat="internet"><i class="fas fa-globe"></i> Internet</div>
+        .system-tray {
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          font-size: 9px;
+          color: #aaaaaa;
+        }
+      </style>
 
-            <div class="start-cat" data-cat="media"><i class="fas fa-music"></i> Media</div>
+      <div class="desktop">
+        <div class="start-menu">
+          <div class="start-sidebar">
+            <div class="start-cat active">All</div>
+            <div class="start-cat">Favorites</div>
+            <div class="start-cat">Games</div>
+            <div class="start-cat">Media</div>
+            <div class="start-cat">System</div>
+          </div>
 
-            <div class="start-cat" data-cat="office"><i class="fas fa-file-word"></i> Office</div>
+          <div class="start-content">
+            <div class="search-input-wrapper">
+              <input type="text" placeholder="Search..." readonly="readonly" />
+            </div>
 
-            <div class="start-cat" data-cat="graphics"><i class="fas fa-paint-brush"></i> Graphics</div>
+            <div class="app-grid">
+              <div class="app-item" style="background: #4a90e2;"></div>
+              <div class="app-item" style="background: #e24a4a;"></div>
+              <div class="app-item" style="background: #50e3c2;"></div>
+              <div class="app-item" style="background: #f5a623;"></div>
+              <div class="app-item" style="background: #b8e986;"></div>
+              <div class="app-item" style="background: #bd10e0;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-            <div class="start-cat" data-cat="games"><i class="fas fa-gamepad"></i> Games</div>
+      <div id="taskbar">
+        <div class="mac-menu-bar">
+          <span></span>
+          <span>File</span>
+          <span>Edit</span>
+          <span>View</span>
+        </div>
 
-            <div class="start-cat" data-cat="development"><i class="fas fa-code"></i> Development</div>
-
-            <div class="start-cat" data-cat="system"><i class="fas fa-screwdriver-wrench"></i> System</div>
-
-            <div class="start-cat" data-cat="help"><i class="fas fa-question-circle"></i> Help</div>
-
-            <div class="start-cat" data-cat="places"><i class="fas fa-folder"></i> Places</div>
-          </div>
-
-          <div class="start-cat" data-cat="settingsApp"><i class="fas fa-cog"></i> Settings</div>
-
-          <div class="start-footer-actions">
-            <button class="start-sleep-btn" id="start-sleep-btn" title="Sleep">
-              <i class="fas fa-moon"></i>
-            </button>
-            <button class="start-lock-btn" id="start-lock-btn" title="Lock System">
-              <i class="fas fa-lock"></i>
-            </button>
-            <button class="start-signout-btn" id="start-signout-btn" title="Sign Out">
-              <i class="fas fa-sign-out-alt"></i>
-            </button>
-            <button class="start-shutdown-btn" id="start-shutdown-btn" title="Shutdown">
-              <i class="fas fa-power-off"></i>
-            </button>
-          </div>
-        </div>
-
-        <div class="start-content">
-          <div class="search-input-wrapper">
-            <i class="fas fa-search search-icon"></i>
-            <input id="start-menu-search" placeholder="Search..." autocomplete="off" />
-          </div>
-
-          <div class="start-page active" data-page="all">
-            <div class="app-grid"></div>
-          </div>
-
-          <div class="start-page" data-page="favorites"></div>
-
-          <div class="start-page" data-page="recent"><div class="app-grid"></div></div>
-
-          <div class="start-page" data-page="development">
-            <div class="app-grid"></div>
-          </div>
-
-          <div class="start-page" data-page="games">
-            <div class="app-grid"></div>
-          </div>
-
-          <div class="start-page" data-page="graphics">
-            <div class="app-grid"></div>
-          </div>
-
-          <div class="start-page" data-page="help">
-            <div class="app-grid"></div>
-          </div>
-
-          <div class="start-page" data-page="internet">
-            <div class="app-grid"></div>
-          </div>
-
-          <div class="start-page" data-page="media">
-            <div class="app-grid"></div>
-          </div>
-
-          <div class="start-page" data-page="office">
-            <div class="app-grid"></div>
-          </div>
-
-          <div class="start-page" data-page="system">
-            <div class="app-grid"></div>
-          </div>
-
-          <div class="start-page" data-page="places">
-            <div class="places-section"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div id="taskbar">
-      <div id="mac-menu-bar">
-        <span class="mac-menu-item mac-menu-apple" data-start="true"><i class="fab fa-apple"></i></span>
-        <span class="mac-menu-item">File</span>
-        <span class="mac-menu-item">Edit</span>
-        <span class="mac-menu-item">View</span>
-        <span class="mac-menu-item">Go</span>
-        <span class="mac-menu-item">Window</span>
-        <span class="mac-menu-item">Help</span>
-      </div>
-      <div id="start-button"></div>
-      <div id="taskbar-windows" style="display: flex"></div>
-      <div id="system-tray">
-        <div id="time-container">
-          <div id="clock">12:00 PM</div>
-          <div id="date">01/01/2026</div>
-        </div>
-        <div id="social-bar-container"></div>
-      </div>
-    </div>
-    <div id="context-menu"></div>
-  </body>
-</html>
-
-    </xhtml:div>
-  </foreignObject>
+        <div class="system-tray">
+          <span>12:00 PM</span>
+          <span>01/01/2026</span>
+        </div>
+      </div>
+    </div>
+  </foreignObject>
 </svg>
+
+
