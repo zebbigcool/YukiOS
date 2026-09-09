@@ -3,6 +3,48 @@
 
   <foreignObject x="0" y="0" width="400" height="250">
     <div xmlns="http://www.w3.org/1999/xhtml" class="yukios-container">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+      
+      <!-- CSS Stylesheets -->
+      <link href="src/styles/achievements.css" rel="stylesheet" />
+      <link href="src/styles/converter.css" rel="stylesheet" />
+      <link href="src/styles/desktop.css" rel="stylesheet" />
+      <link href="src/styles/gamesAndApps.css" rel="stylesheet" />
+      <link href="src/styles/notification.css" rel="stylesheet" />
+      <link href="src/styles/session.css" rel="stylesheet" />
+      <link href="src/styles/settings.css" rel="stylesheet" />
+      <link href="src/styles/startMenu.css" rel="stylesheet" />
+      <link href="src/styles/steam.css" rel="stylesheet" />
+      <link href="src/styles/style.css" rel="stylesheet" />
+      <link href="src/styles/systemUI.css" rel="stylesheet" />
+      <link href="src/styles/taskbar.css" rel="stylesheet" />
+      <link href="src/styles/widgets.css" rel="stylesheet" />
+      <link href="src/styles/themes.css" rel="stylesheet" />
+      <link href="src/styles/cursorEffect.css" rel="stylesheet" />
+      <link href="src/styles/mobile.css" rel="stylesheet" />
+
+      <!-- Embedded Scripts -->
+      <script
+        type="module"
+        src="https://static.cloudflareinsights.com/beacon.min.js"
+        data-cf-beacon='{"token": "2fef78db02bd4ab593e4a78cc531c0bd"}'
+      ></script>
+
+      <script>
+        (function () {
+          try {
+            var href = new URL("manifest.webmanifest", window.location.href).toString();
+            var link = document.createElement("link");
+            link.rel = "manifest";
+            link.href = href;
+            document.head.appendChild(link);
+          } catch (e) {}
+        })();
+      </script>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer="defer"></script>
+      <script type="module" src="src/main.js"></script>
+
       <style>
         .yukios-container {
           width: 400px;
@@ -27,40 +69,86 @@
 
         .start-menu {
           position: absolute;
-          bottom: 10px;
-          left: 10px;
-          width: 220px;
-          height: 150px;
+          bottom: 6px;
+          left: 6px;
+          width: 250px;
+          height: 170px;
           background: rgba(30, 30, 30, 0.95);
           border: 1px solid #333333;
           border-radius: 6px;
           display: flex;
           box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+          overflow: hidden;
         }
 
         .start-sidebar {
-          width: 75px;
+          width: 95px;
           border-right: 1px solid #333333;
-          padding: 6px 4px;
+          padding: 4px;
           display: flex;
           flex-direction: column;
-          gap: 2px;
+          justify-content: space-between;
           background: rgba(0, 0, 0, 0.2);
+          box-sizing: border-box;
+        }
+
+        .start-user {
+          display: flex;
+          align-items: center;
+          gap: 4px;
+          padding-bottom: 4px;
+          border-bottom: 1px solid #2a2a2a;
+        }
+
+        .start-user img {
+          width: 14px;
+          height: 14px;
+          border-radius: 50%;
+        }
+
+        .start-cat-list {
+          display: flex;
+          flex-direction: column;
+          gap: 1px;
+          overflow-y: auto;
+          flex: 1;
+          margin: 4px 0;
         }
 
         .start-cat {
-          padding: 3px 5px;
+          padding: 2px 4px;
           border-radius: 3px;
-          font-size: 9px;
+          font-size: 8px;
           color: #aaaaaa;
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
         }
 
+        .start-cat i {
+          font-size: 7px;
+          margin-right: 2px;
+        }
+
         .start-cat.active {
           background: #3a3f4d;
           color: #ffffff;
+        }
+
+        .start-footer-actions {
+          display: flex;
+          justify-content: space-around;
+          padding-top: 4px;
+          border-top: 1px solid #2a2a2a;
+        }
+
+        .start-footer-actions button {
+          background: transparent;
+          border: none;
+          color: #888888;
+          font-size: 8px;
+          padding: 0;
+          cursor: pointer;
         }
 
         .start-content {
@@ -69,11 +157,22 @@
           display: flex;
           flex-direction: column;
           gap: 6px;
+          box-sizing: border-box;
         }
 
         .search-input-wrapper {
           width: 100%;
+          position: relative;
           box-sizing: border-box;
+        }
+
+        .search-input-wrapper .search-icon {
+          position: absolute;
+          left: 5px;
+          top: 50%;
+          transform: translateY(-50%);
+          font-size: 7px;
+          color: #666;
         }
 
         .search-input-wrapper input {
@@ -82,92 +181,158 @@
           border: 1px solid #444444;
           border-radius: 3px;
           color: #ffffff;
-          font-size: 9px;
-          padding: 3px 5px;
+          font-size: 8px;
+          padding: 2px 4px 2px 14px;
           box-sizing: border-box;
+        }
+
+        .start-page {
+          display: none;
+        }
+
+        .start-page.active {
+          display: block;
         }
 
         .app-grid {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
-          gap: 6px;
+          gap: 4px;
         }
 
         .app-item {
-          width: 28px;
-          height: 28px;
+          width: 22px;
+          height: 22px;
           border-radius: 4px;
           margin: 0 auto;
         }
 
         #taskbar {
-          height: 26px;
+          height: 22px;
           background: rgba(20, 20, 20, 0.95);
           border-top: 1px solid #333333;
           display: flex;
           align-items: center;
           justify-content: space-between;
-          padding: 0 8px;
+          padding: 0 6px;
+          box-sizing: border-box;
         }
 
-        .mac-menu-bar {
+        #mac-menu-bar {
           display: flex;
-          gap: 8px;
+          gap: 6px;
           color: #cccccc;
-          font-size: 10px;
+          font-size: 9px;
         }
 
-        .system-tray {
+        .mac-menu-item {
+          cursor: pointer;
+        }
+
+        #system-tray {
           display: flex;
           align-items: center;
           gap: 6px;
-          font-size: 9px;
+          font-size: 8px;
           color: #aaaaaa;
+        }
+
+        #time-container {
+          display: flex;
+          gap: 4px;
         }
       </style>
 
-      <div class="desktop">
-        <div class="start-menu">
+      <h1 style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap">
+        YukiOS - Free Browser-Based Desktop Environment
+      </h1>
+      <div id="selection-box"></div>
+
+      <div id="desktop" class="desktop" role="presentation">
+        <div id="start-menu" class="start-menu">
           <div class="start-sidebar">
-            <div class="start-cat active">All</div>
-            <div class="start-cat">Favorites</div>
-            <div class="start-cat">Games</div>
-            <div class="start-cat">Media</div>
-            <div class="start-cat">System</div>
+            <div class="start-user">
+              <img src="static/icons/guest.webp" alt="User avatar" />
+              <span></span>
+            </div>
+
+            <div class="start-cat-list">
+              <div class="start-cat" data-cat="favorites"><i class="fas fa-star"></i> Favorites</div>
+              <div class="start-cat" data-cat="recent"><i class="fas fa-clock"></i> Recent</div>
+              <div class="start-cat active" data-cat="all"><i class="fas fa-th"></i> All Applications</div>
+              <div class="start-cat" data-cat="internet"><i class="fas fa-globe"></i> Internet</div>
+              <div class="start-cat" data-cat="media"><i class="fas fa-music"></i> Media</div>
+              <div class="start-cat" data-cat="office"><i class="fas fa-file-word"></i> Office</div>
+              <div class="start-cat" data-cat="graphics"><i class="fas fa-paint-brush"></i> Graphics</div>
+              <div class="start-cat" data-cat="games"><i class="fas fa-gamepad"></i> Games</div>
+              <div class="start-cat" data-cat="development"><i class="fas fa-code"></i> Development</div>
+              <div class="start-cat" data-cat="system"><i class="fas fa-screwdriver-wrench"></i> System</div>
+              <div class="start-cat" data-cat="help"><i class="fas fa-question-circle"></i> Help</div>
+              <div class="start-cat" data-cat="places"><i class="fas fa-folder"></i> Places</div>
+              <div class="start-cat" data-cat="settingsApp"><i class="fas fa-cog"></i> Settings</div>
+            </div>
+
+            <div class="start-footer-actions">
+              <button class="start-sleep-btn" id="start-sleep-btn" title="Sleep"><i class="fas fa-moon"></i></button>
+              <button class="start-lock-btn" id="start-lock-btn" title="Lock System"><i class="fas fa-lock"></i></button>
+              <button class="start-signout-btn" id="start-signout-btn" title="Sign Out"><i class="fas fa-sign-out-alt"></i></button>
+              <button class="start-shutdown-btn" id="start-shutdown-btn" title="Shutdown"><i class="fas fa-power-off"></i></button>
+            </div>
           </div>
 
           <div class="start-content">
             <div class="search-input-wrapper">
-              <input type="text" placeholder="Search..." readonly="readonly" />
+              <i class="fas fa-search search-icon"></i>
+              <input id="start-menu-search" placeholder="Search..." autocomplete="off" />
             </div>
 
-            <div class="app-grid">
-              <div class="app-item" style="background: #4a90e2;"></div>
-              <div class="app-item" style="background: #e24a4a;"></div>
-              <div class="app-item" style="background: #50e3c2;"></div>
-              <div class="app-item" style="background: #f5a623;"></div>
-              <div class="app-item" style="background: #b8e986;"></div>
-              <div class="app-item" style="background: #bd10e0;"></div>
+            <div class="start-page active" data-page="all">
+              <div class="app-grid">
+                <div class="app-item" style="background: #4a90e2;"></div>
+                <div class="app-item" style="background: #e24a4a;"></div>
+                <div class="app-item" style="background: #50e3c2;"></div>
+                <div class="app-item" style="background: #f5a623;"></div>
+                <div class="app-item" style="background: #b8e986;"></div>
+                <div class="app-item" style="background: #bd10e0;"></div>
+              </div>
             </div>
+
+            <div class="start-page" data-page="favorites"></div>
+            <div class="start-page" data-page="recent"><div class="app-grid"></div></div>
+            <div class="start-page" data-page="development"><div class="app-grid"></div></div>
+            <div class="start-page" data-page="games"><div class="app-grid"></div></div>
+            <div class="start-page" data-page="graphics"><div class="app-grid"></div></div>
+            <div class="start-page" data-page="help"><div class="app-grid"></div></div>
+            <div class="start-page" data-page="internet"><div class="app-grid"></div></div>
+            <div class="start-page" data-page="media"><div class="app-grid"></div></div>
+            <div class="start-page" data-page="office"><div class="app-grid"></div></div>
+            <div class="start-page" data-page="system"><div class="app-grid"></div></div>
+            <div class="start-page" data-page="places"><div class="places-section"></div></div>
           </div>
         </div>
       </div>
 
       <div id="taskbar">
-        <div class="mac-menu-bar">
-          <span></span>
-          <span>File</span>
-          <span>Edit</span>
-          <span>View</span>
+        <div id="mac-menu-bar">
+          <span class="mac-menu-item mac-menu-apple" data-start="true"><i class="fab fa-apple"></i></span>
+          <span class="mac-menu-item">File</span>
+          <span class="mac-menu-item">Edit</span>
+          <span class="mac-menu-item">View</span>
+          <span class="mac-menu-item">Go</span>
+          <span class="mac-menu-item">Window</span>
+          <span class="mac-menu-item">Help</span>
         </div>
-
-        <div class="system-tray">
-          <span>12:00 PM</span>
-          <span>01/01/2026</span>
+        <div id="start-button"></div>
+        <div id="taskbar-windows" style="display: flex"></div>
+        <div id="system-tray">
+          <div id="time-container">
+            <div id="clock">12:00 PM</div>
+            <div id="date">01/01/2026</div>
+          </div>
+          <div id="social-bar-container"></div>
         </div>
       </div>
+      <div id="context-menu"></div>
     </div>
   </foreignObject>
 </svg>
-
-
